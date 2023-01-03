@@ -13,6 +13,10 @@ body
 
 .some-shit
 {
-  color: hsl(127, 50%, 40%);
+  color: crimson;
   font-family: monospace, "Hack";
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid yellow;
+  border-radius: 5px;
 }
