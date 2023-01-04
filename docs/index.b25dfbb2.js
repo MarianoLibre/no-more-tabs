@@ -1,1 +1,0 @@
-const e=document.getElementById("root"),t=document.createElement("p");t.innerText="This is some more shit.",t.setAttribute("class","some-shit"),e.appendChild(t);const n=document.createElement("pre");n.className="more-shit",n.innerText="I fucking love BASH!",e.appendChild(n);
