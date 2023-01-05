@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel",
-    "build": "parcel build --no-source-maps"
+    "build": "parcel build --no-source-maps --no-optimize"
   },
   "source": "src/index.html",
   "targets": {
