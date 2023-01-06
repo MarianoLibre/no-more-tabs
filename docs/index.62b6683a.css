@@ -8,22 +8,23 @@
   --bg-alt: #4d4d4d;
   --bg-normal: #31363b;
   --bg-dark: #24282c;
+  --bg-darker: #181b1d;
   --bg-light: #485058;
-  --bg-lighter: #626876;
+  --bg-lighter: #93a2b1;
   --plasma-blue: #3daee9;
   --hyper-blue: #3daee6;
   --fg-inactive: #bdc3c7;
   --link: #2980b9;
-  --fg-negative: #da4453;
-  --fg-neutral: #f67400;
-  --fg-neutral-comp: #c9ce3b;
+  --fg-red: #da4453;
+  --fg-orange: #f67400;
+  --fg-yellow: #c9ce3b;
   --fg-normal: #eff0f1;
-  --fg-positive: #27ae60;
-  --fg-visited: #7f8c8d;
+  --fg-green: #27ae60;
+  --fg-grey: #7f8c8d;
 }
 
 body {
-  background-color: var(--bg-normal);
+  background-color: var(--bg-dark);
   color: var(--fg-normal);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
 }
@@ -31,7 +32,7 @@ body {
 #container {
   width: 100vw;
   height: 100vh;
-  grid-template-rows: 60px calc(100vh - 60px);
+  grid-template-rows: 70px calc(100vh - 70px);
   display: grid;
 }
 
@@ -39,8 +40,8 @@ nav {
   width: 100%;
   height: 100%;
   border-bottom: 1px solid var(--bg-alt);
-  background-color: var(--bg-dark);
-  color: var(--fg-visited);
+  background-color: var(--bg-darker);
+  color: var(--bg-light);
   grid-template-columns: 1fr 2fr 2fr 1fr;
   display: grid;
 }
@@ -52,7 +53,7 @@ nav div {
 
 #logo {
   letter-spacing: 8px;
-  color: var(--bg-lighter);
+  color: var(--bg-light);
   padding: 0 16px;
   font-size: 24px;
 }
@@ -75,7 +76,7 @@ nav div {
 }
 
 #side-bar {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-darker);
 }
 
 #side-bar li {
@@ -92,7 +93,7 @@ nav div {
 }
 
 #side-bar li:hover {
-  background-color: var(--bg-normal);
+  background-color: var(--bg-dark);
 }
 
 .icon {
@@ -115,26 +116,61 @@ nav div {
 }
 
 .item {
-  color: var(--fg-visited);
+  color: var(--bg-lighter);
+}
+
+.search-bar {
+  color: var(--fg-grey);
+  min-width: 100%;
+  height: 32px;
+  background-color: #0000;
+  transition: all .4s;
+  position: relative;
 }
 
 .dict {
-  background-color: var(--bg-normal);
-  border: 1px solid var(--bg-alt);
-  min-width: 100%;
-  border-radius: 6px;
+  background-color: var(--bg-dark);
+  width: 100%;
+  height: 100%;
+  border: 1px solid #0000;
+  border-radius: 5px;
   outline: none;
-  padding: 6px 12px;
-  transition: all .4s;
+  padding-left: 10px;
 }
 
 .dict::placeholder {
-  color: var(--fg-visited);
+  color: var(--bg-light);
+}
+
+.dict:hover {
+  box-shadow: 4px 4px 4px #0009;
 }
 
 .dict:focus {
-  background-color: var(--bg-lighter);
-  color: var(--bg-normal);
+  border: 1px solid var(--fg-red);
+  color: var(--fg-normal);
+}
+
+.dict:focus:hover {
+  box-shadow: none;
+}
+
+.dict:focus ~ .x {
+  color: var(--fg-red);
+}
+
+.x {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  color: var(--bg-lighter);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  display: flex;
+  position: absolute;
+  right: 0;
 }
 
 #cambridge, #rae {
